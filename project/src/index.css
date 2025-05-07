@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary colors - Green */
+  --color-primary-50: #e8f5e9;
+  --color-primary-100: #c8e6c9;
+  --color-primary-200: #a5d6a7;
+  --color-primary-300: #81c784;
+  --color-primary-400: #66bb6a;
+  --color-primary-500: #4caf50;
+  --color-primary-600: #43a047;
+  --color-primary-700: #388e3c;
+  --color-primary-800: #2e7d32;
+  --color-primary-900: #1b5e20;
+  
+  /* Secondary colors - Brown */
+  --color-secondary-50: #efebe9;
+  --color-secondary-100: #d7ccc8;
+  --color-secondary-200: #bcaaa4;
+  --color-secondary-300: #a1887f;
+  --color-secondary-400: #8d6e63;
+  --color-secondary-500: #795548;
+  --color-secondary-600: #6d4c41;
+  --color-secondary-700: #5d4037;
+  --color-secondary-800: #4e342e;
+  --color-secondary-900: #3e2723;
+  
+  /* Accent colors - Yellow for Seeds */
+  --color-seed-500: #ffc107;
+  
+  /* Accent colors - Blue for Fertilizers */
+  --color-fertilizer-500: #2196f3;
+  
+  /* Accent colors - Red for Pesticides */
+  --color-pesticide-500: #f44336;
+  
+  /* Success, Warning, Error */
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium leading-tight;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-primary-500;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+  }
+  
+  .form-group {
+    @apply mb-4;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+  
+  .form-input {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
+    focus:outline-none focus:ring-primary-500 focus:border-primary-500;
+  }
+  
+  .form-error {
+    @apply mt-1 text-sm text-red-600;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-seed {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .badge-fertilizer {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  .badge-pesticide {
+    @apply bg-red-100 text-red-800;
+  }
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
